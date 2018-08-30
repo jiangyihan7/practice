@@ -14,7 +14,7 @@ file.write(r.text)
 
 f=open('webpage','r',encoding='utf-8')
 s=f.read()
-results=re.findall("(?isu)(http\://[a-zA-Z0-9\.\?\&\=\:]+)",s)
+results=re.findall("(http\://[a-zA-Z0-9\.\?\&\=\:]+)",s)
 print(results)
 aa='\n'.join(results)
 ff=open('result.txt','w')
