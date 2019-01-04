@@ -1,0 +1,17 @@
+//解压文件夹下所有文件
+import zipfile,os,sys
+def zip(file):
+
+    f=zipfile.ZipFile(file)
+    # f.namelist()
+    fname=f.filename.split(".")
+    f.extractall(fname[0])
+    f.close()
+if __name__ == '__main__':
+    dirname=sys.argv[1]
+    list = os.listdir(dirname)
+    for i in range(0, len(list)):
+        path = os.path.join(dirname, list[i])
+        if os.path.isfile(path):
+            zip(path)
+
